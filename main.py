@@ -24,11 +24,22 @@ class BankAccount:
       print("Amount added successfully!")
     else:
       print("Invalid amount!")
-    
       
-  def 
+  @staticmethod
+  def validate_withdraw_amount(amount, balance):
+    if amount <= 0 or amount > balance:
+      return False
+    else:
+      return True
+    
+  def withdraw(self, amount):
+    if BankAccount.validate_withdraw_amount(amount, self.balance):
+      self.balance -= amount
+      print("Amount withdrawn successfully!")
+    else:
+      print("Invalid Amount!")
 
-
+  def display(self, account_holder, account_number, current_balance):
 
 
 
